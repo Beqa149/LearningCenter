@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="49ce11542f0d4918a01e10b10b91d130" Name="Diagram1">
+        <EntityTypeShape EntityType="LCDBModel.Menu" Width="1.5" PointX="8.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.MenusRole" Width="1.5" PointX="11" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.TranslateMenu" Width="1.5" PointX="11" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Role" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.UserRole" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.User" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Curriculum" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Prerequisite" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Registration" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Scheduler" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Subject" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Catalog" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Language" Width="1.5" PointX="8.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Lecturer" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="LCDBModel.FK_Menus_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_MenusRoles_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_TranslateMenus_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_MenusRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_TranslateMenus_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Lecturers_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_UserRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_UserRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Curriculum_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Registrations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Users_Catalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Users_Catalog1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Curriculum_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Schedulers_Curriculum" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Prerequisites_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Prerequisites_Subjects1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Registrations_Schedulers" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Schedulers_Catalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Catalog_Catalog1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Lecturers_Catalog" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LCMSBussinessLogic.Authorize" CodeBehind="Authorize.svc.cs" %>
