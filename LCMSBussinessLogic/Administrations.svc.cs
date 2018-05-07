@@ -1,4 +1,5 @@
 ﻿using LCMSBussinessLogic.Exceptions;
+using LCMSBussinessLogic.Implemetations;
 using LCMSDataAccess;
 using System;
 using System.Collections.Generic;
@@ -136,6 +137,9 @@ namespace LCMSBussinessLogic
         {
         }
 
-
+        public List<MenuClass> GetMenus(int roleId, int languageId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

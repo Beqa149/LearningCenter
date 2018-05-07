@@ -48,9 +48,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\LCMSDataAccess\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="LCMSDataAccess">
-      <HintPath>..\LCMSDataAccess\bin\Debug\LCMSDataAccess.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
@@ -120,6 +117,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LCMSDataAccess\LCMSDataAccess.csproj">
+      <Project>{c315d8c1-0d37-4a5f-b486-9ffcc1200b41}</Project>
+      <Name>LCMSDataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

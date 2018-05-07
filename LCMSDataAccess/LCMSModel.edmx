@@ -12,7 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="ParentID" Type="int" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
           <Property Name="EventName" Type="varchar" MaxLength="100" />
           <Property Name="OrderNumber" Type="int" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
@@ -211,7 +211,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Menus_Menus">
-          <End Role="Menus" Type="Self.Menus" Multiplicity="0..1" />
+          <End Role="Menus" Type="Self.Menus" Multiplicity="1" />
           <End Role="Menus1" Type="Self.Menus" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Menus">
@@ -497,7 +497,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ParentID" Type="Int32" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
           <Property Name="EventName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="OrderNumber" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
