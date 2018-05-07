@@ -4,9 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LearningCenterManagementSystem"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" WindowState="Maximized" ResizeMode="NoResize">
     <Grid>
-        
+        <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Menu Name="MainMenu"  VerticalAlignment="Top" HorizontalAlignment="Stretch" DockPanel.Dock="Top" >
+                <MenuItem Name="MenuHome" Header="მთავარი">
+                    <MenuItem Name="MenuExit" Header="პროგრამიდან გამოსვლა" Click="MenuExit_Click"/>
+                </MenuItem>
+                <MenuItem Name="MenuAdministrations" Header="ადმინისტრირება">                  
+                    <MenuItem Name="MenuUser" Header="მომხმარებლების მართვა">
+                        <MenuItem.Icon>
+                            <Image Source="/IMAGES/UserManagement.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem Name="MenuAddUser" Header="მომხმარებლის დამატება" Click="MenuAddUser_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/IMAGES/AddNewUser.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuUpdateUser" Header="მომხმარებლის რედაქტირება" Click="MenuUpdateUser_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/IMAGES/EditUser.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuBlockUnblockUser" Header="მომხმარებლის დაბლოკვა/ბლოკის მოხსნა" Click="MenuBlockUnblockUser_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="/IMAGES/BlockUnblockUser.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Name="MenuUserList" Header="მომხმარებლების სია" Click="MenuUserList_Click">
+                            <MenuItem.Icon>
+                                <Image Source="/IMAGES/Users.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>              
+                <MenuItem Name="MenuCurriculum" Header="სასწავლო პროცესი">
+                    <MenuItem Name="MenuSubject" Header="საგნები">
+                        <MenuItem Name="MenuAddSubject" Header="დამატება">
+                          
+                        </MenuItem>
+                        <MenuItem Name="MenuUpdateSubject" Header="რედაქტირება">
+                           
+                        </MenuItem>
+                        <MenuItem Name="MenuBlockUnblockSubject" Header="დაბლოკვა/ბლოკის მოხსნა">
+                          
+                        </MenuItem>
+                        <MenuItem Name="MenuSubjectList" Header="საგნების სრული სია">
+                          
+                        </MenuItem>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Name="MenuHR" Header="ადამიანური რესურსების მართვა">
+
+                </MenuItem>               
+            </Menu>
+        </DockPanel>
+
+        <DockPanel Name="UIPanel" VerticalAlignment="Bottom">
+         
+        </DockPanel>
     </Grid>
 </Window>

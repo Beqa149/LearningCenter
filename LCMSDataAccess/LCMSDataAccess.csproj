@@ -109,30 +109,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
     <EntityDeploy Include="LCMSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LCMSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
     <None Include="LCMSModel.edmx.diagram">
       <DependentUpon>LCMSModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LCMSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LCMSModel.edmx</DependentUpon>
       <LastGenOutput>LCMSModel.Context.cs</LastGenOutput>
+      <DependentUpon>LCMSModel.edmx</DependentUpon>
     </Content>
     <Content Include="LCMSModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LCMSModel.edmx</DependentUpon>
       <LastGenOutput>LCMSModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

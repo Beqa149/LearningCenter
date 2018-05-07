@@ -13,7 +13,7 @@ namespace LCMSBussinessLogic
     // NOTE: In order to launch WCF Test Client for testing this service, please select Administrations.svc or Administrations.svc.cs at the Solution Explorer and start debugging.
     public class Administrations : IAdministrations
     {
-        
+
 
         public bool AddMenu(Menu menu)
         {
@@ -40,7 +40,7 @@ namespace LCMSBussinessLogic
             catch (Exception)
             {
 
-                return false ;
+                return false;
             }
         }
 
@@ -96,7 +96,7 @@ namespace LCMSBussinessLogic
             }
         }
 
-        public bool ChangeMenuIndex(Menu menu,int ordernNUmber)
+        public bool ChangeMenuIndex(Menu menu, int ordernNUmber)
         {
             try
             {

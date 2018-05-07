@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LCDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LCDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Menus">
           <Key>
             <PropertyRef Name="ID" />
@@ -12,7 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
           <Property Name="EventName" Type="varchar" MaxLength="100" />
           <Property Name="OrderNumber" Type="int" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
@@ -211,7 +211,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Menus_Menus">
-          <End Role="Menus" Type="Self.Menus" Multiplicity="1" />
+          <End Role="Menus" Type="Self.Menus" Multiplicity="0..1" />
           <End Role="Menus1" Type="Self.Menus" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Menus">
@@ -486,8 +486,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -498,7 +497,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
           <Property Name="EventName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="OrderNumber" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
@@ -1198,6 +1197,43 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="88650aaa8e364fbea5e9b16424bff33b" Name="Diagram1">
+        <EntityTypeShape EntityType="LCDBModel.Menu" Width="1.5" PointX="8.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.MenusRole" Width="1.5" PointX="11" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.TranslateMenu" Width="1.5" PointX="11" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Role" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.UserRole" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.User" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Curriculum" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Prerequisite" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Registration" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Scheduler" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Subject" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Catalog" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Language" Width="1.5" PointX="8.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LCDBModel.Lecturer" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="LCDBModel.FK_Menus_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_MenusRoles_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_TranslateMenus_Menus" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_MenusRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_TranslateMenus_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Lecturers_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_UserRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_UserRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Curriculum_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Registrations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Users_Catalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Users_Catalog1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Curriculum_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Schedulers_Curriculum" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Prerequisites_Subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Prerequisites_Subjects1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Registrations_Schedulers" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Schedulers_Catalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Catalog_Catalog1" ManuallyRouted="false" />
+        <AssociationConnector Association="LCDBModel.FK_Lecturers_Catalog" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

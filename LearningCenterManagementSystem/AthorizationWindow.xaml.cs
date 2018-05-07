@@ -31,7 +31,7 @@ namespace LearningCenterManagementSystem
                 string user_name = txtBox_UserName.Text;
                 string password = txtBox_Password.Password;
 
-                MessageBox.Show($"User Name: {user_name} Password: {password}");
+                //MessageBox.Show($"User Name: {user_name} Password: {password}");
 
                 int userId = 0;
 
