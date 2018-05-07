@@ -3,6 +3,7 @@ using LCMSBussinessLogic.Implemetations;
 using LCMSDataAccess;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -133,13 +134,41 @@ namespace LCMSBussinessLogic
                 return false;
             }
         }
+
         public void DoWork()
         {
         }
 
         public List<MenuClass> GetMenus(int roleId, int languageId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var model = new LCDBEntities())
+                {
+                    var r = (from mr in model.MenusRoles.AsQueryable()
+                             join m in model.Menus.AsQueryable() on mr.MenuID equals m.ID
+                             join l in model.TranslateMenus.AsQueryable() on m.ID equals l.MenuID
+                             where mr.RoleID == roleId && l.LanguageID == languageId
+                             select new MenuClass
+                             {
+                                 ID = m.ID,
+                                 Name = m.Name,
+                                 Description = m.Description,
+                                 Tittle = l.Title,
+                                 EventName = m.EventName,
+                                 IsActive = m.IsActive,
+                                 OrderNumber = m.OrderNumber,
+                                 ParentID = m.ParentID
+                             }).ToList();
+
+                    return r;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return new List<MenuClass>();
+            }
         }
     }
 }
